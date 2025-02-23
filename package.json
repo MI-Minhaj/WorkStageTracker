@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
+    "pdf-lib": "^1.17.1",
+    "react-router-dom": "^5.3.4",
+    "react-to-print": "^3.0.5"
+  }
+}
