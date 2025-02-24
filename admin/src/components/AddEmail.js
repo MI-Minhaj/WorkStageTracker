@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table, Button, Form, Modal } from "react-bootstrap";
 
-// const API_URL = "http://localhost:5000/emails";
 
 const EmailManagement = () => {
   const [emails, setEmails] = useState([]);
@@ -14,7 +13,9 @@ const EmailManagement = () => {
 
   const fetchEmails = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/projects/emails/all-emails`);
+      const res = await fetch(
+        `http://localhost:5000/projects/emails/all-emails`
+      );
       const data = await res.json();
       setEmails(data);
     } catch (err) {
@@ -35,7 +36,9 @@ const EmailManagement = () => {
   const handleDeleteEmail = async (id) => {
     if (!window.confirm("Are you sure you want to delete this email?")) return;
     try {
-      await fetch(`http://localhost:5000/projects/emails/delete-email/${id}`, { method: "DELETE" });
+      await fetch(`http://localhost:5000/projects/emails/delete-email/${id}`, {
+        method: "DELETE",
+      });
       fetchEmails();
     } catch (err) {
       console.error("Error deleting email:", err);
@@ -87,10 +90,18 @@ const EmailManagement = () => {
               <td>{entry.name}</td>
               <td>{entry.email}</td>
               <td>
-                <Button variant="warning" size="sm" onClick={() => handleEditClick(entry)}>
+                <Button
+                  variant="warning"
+                  size="sm"
+                  onClick={() => handleEditClick(entry)}
+                >
                   Edit
                 </Button>{" "}
-                <Button variant="danger" size="sm" onClick={() => handleDeleteEmail(entry.id)}>
+                <Button
+                  variant="danger"
+                  size="sm"
+                  onClick={() => handleDeleteEmail(entry.id)}
+                >
                   Delete
                 </Button>
               </td>
@@ -102,7 +113,9 @@ const EmailManagement = () => {
       {/* Modal for Adding & Editing Emails */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>{currentEmail.id ? "Edit Email" : "Add Email"}</Modal.Title>
+          <Modal.Title>
+            {currentEmail.id ? "Edit Email" : "Add Email"}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -112,7 +125,9 @@ const EmailManagement = () => {
                 type="text"
                 placeholder="Enter Name"
                 value={currentEmail.name}
-                onChange={(e) => setCurrentEmail({ ...currentEmail, name: e.target.value })}
+                onChange={(e) =>
+                  setCurrentEmail({ ...currentEmail, name: e.target.value })
+                }
                 required
               />
             </Form.Group>
@@ -122,7 +137,9 @@ const EmailManagement = () => {
                 type="email"
                 placeholder="Enter Email"
                 value={currentEmail.email}
-                onChange={(e) => setCurrentEmail({ ...currentEmail, email: e.target.value })}
+                onChange={(e) =>
+                  setCurrentEmail({ ...currentEmail, email: e.target.value })
+                }
                 required
               />
             </Form.Group>

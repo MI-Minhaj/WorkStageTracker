@@ -5,9 +5,23 @@ const CustomStageForm = ({ customStage, handleCustomStageChange }) => {
   return (
     <>
       <h5 className="mt-3">Add Custom Stage</h5>
-      <Form.Control name="name" placeholder="Stage Name" onChange={handleCustomStageChange} className="mb-2" />
-      <Form.Control name="description" placeholder="Description" onChange={handleCustomStageChange} className="mb-2" />
-      <Form.Control type="date" name="end_date" onChange={handleCustomStageChange} />
+      <Form.Control
+        name="name"
+        placeholder="Stage Name"
+        onChange={handleCustomStageChange}
+        className="mb-2"
+      />
+      <Form.Control
+        name="description"
+        placeholder="Description"
+        onChange={handleCustomStageChange}
+        className="mb-2"
+      />
+      <Form.Control
+        type="date"
+        name="end_date"
+        onChange={handleCustomStageChange}
+      />
 
       {/* Custom Stage Ongoing Checkbox */}
       <Form.Check
@@ -15,7 +29,11 @@ const CustomStageForm = ({ customStage, handleCustomStageChange }) => {
         name="customStageStatus"
         label="Ongoing"
         checked={customStage.status === "ongoing"}
-        onChange={() => handleCustomStageChange({ target: { name: "status", value: "ongoing" } })}
+        onChange={() =>
+          handleCustomStageChange({
+            target: { name: "status", value: "ongoing" },
+          })
+        }
       />
 
       {/* Custom Stage Completed Checkbox */}
@@ -24,7 +42,11 @@ const CustomStageForm = ({ customStage, handleCustomStageChange }) => {
         name="customStageStatus"
         label="Completed"
         checked={customStage.status === "completed"}
-        onChange={() => handleCustomStageChange({ target: { name: "status", value: "completed" } })}
+        onChange={() =>
+          handleCustomStageChange({
+            target: { name: "status", value: "completed" },
+          })
+        }
       />
     </>
   );

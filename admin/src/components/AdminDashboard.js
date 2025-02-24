@@ -8,7 +8,6 @@ import {
   useLocation,
 } from "react-router-dom";
 import "../style/AdminDashboard.css";
-// import BarChart from "./BarChart"; // Import the BarChart component
 import ShowProjectList from "./ShowProjectList";
 import CreateProject from "./CreateProject";
 import StageManager from "./StageManager";
@@ -16,13 +15,6 @@ import UpdateStages from "./UpdateStages";
 import ShareProject from "./ShareProject";
 import EmailManagement from "./AddEmail";
 
-// EmailManagement
-
-
-
-
-
-// import NonRegReportPage from "./NonRegReportPage";
 
 const AdminDashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
@@ -74,9 +66,9 @@ const AdminDashboard = ({ setAuth }) => {
                 Home
               </Nav.Link>
               <Nav.Link as={Link} to="/create-project">
-              Create Project
+                Create Project
               </Nav.Link>
-               <Nav.Link as={Link} to="/stagemanager">
+              <Nav.Link as={Link} to="/stagemanager">
                 Add Stage
               </Nav.Link>
               <Nav.Link as={Link} to="/updateproject">
@@ -86,21 +78,8 @@ const AdminDashboard = ({ setAuth }) => {
                 ShareProject
               </Nav.Link>
               <Nav.Link as={Link} to="/emailmanagement">
-              EmailManagement
+                EmailManagement
               </Nav.Link>
-              
-              {/*
-              <Nav.Link as={Link} to="/add-product">
-                Add Product
-              </Nav.Link>
-              <Nav.Link as={Link} to="/regreport">
-                Reg Report
-              </Nav.Link>
-              <Nav.Link as={Link} to="/nonregreport">
-                Non-Reg Report
-              </Nav.Link> */}
-              {/* <Nav.Link href="#">Users</Nav.Link>
-              <Nav.Link href="#">Settings</Nav.Link> */}
               <Button variant="light" onClick={logout}>
                 Logout
               </Button>
@@ -111,12 +90,12 @@ const AdminDashboard = ({ setAuth }) => {
         <div className="container mt-5">
           <Switch>
             <Route exact path="/admin-dashboard">
-              {isLoggedIn && <ShowProjectList/>} {/* Render BarChart if logged in */}
-              </Route>
-              <Route path="/create-project">
-              < CreateProject/>
+              {isLoggedIn && <ShowProjectList />}{" "}
             </Route>
-            
+            <Route path="/create-project">
+              <CreateProject />
+            </Route>
+
             <Route path="/stagemanager">
               <StageManager />
             </Route>
@@ -132,17 +111,6 @@ const AdminDashboard = ({ setAuth }) => {
             <Route path="/emailmanagement">
               <EmailManagement />
             </Route>
-            
-            {/*
-            <Route path="/add-product">
-              <AddProduct />
-            </Route>
-            <Route path="/regreport">
-              <RegReportPage />
-            </Route>
-            <Route path="/nonregreport">
-              <NonRegReportPage /> 
-            </Route>*/}
           </Switch>
         </div>
       </div>

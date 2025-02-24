@@ -10,7 +10,9 @@ const ProjectDetailsModal = ({ show, onHide, project, onAddStages }) => {
 
   const fetchStages = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/projects/${project.project_id}/stages`);
+      const res = await fetch(
+        `http://localhost:5000/projects/${project.project_id}/stages`
+      );
       const data = await res.json();
       setStages(data);
     } catch (err) {
@@ -24,7 +26,9 @@ const ProjectDetailsModal = ({ show, onHide, project, onAddStages }) => {
         <Modal.Title>{project?.project_name}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p><strong>Description:</strong> {project?.description}</p>
+        <p>
+          <strong>Description:</strong> {project?.description}
+        </p>
         <Table bordered striped>
           <thead>
             <tr>
@@ -47,7 +51,11 @@ const ProjectDetailsModal = ({ show, onHide, project, onAddStages }) => {
         </Table>
       </Modal.Body>
       <Modal.Footer>
-        {project?.status !== "Completed" && <Button variant="primary" onClick={onAddStages}>Add Stages</Button>}
+        {project?.status !== "Completed" && (
+          <Button variant="primary" onClick={onAddStages}>
+            Add Stages
+          </Button>
+        )}
       </Modal.Footer>
     </Modal>
   );

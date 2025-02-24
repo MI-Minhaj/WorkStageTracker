@@ -69,8 +69,7 @@ const AdminRegister = ({ setAuth }) => {
               </div>
             )}
             <Form onSubmit={onSubmitForm} className="needs-validation">
-
-            <Form.Group controlId="name">
+              <Form.Group controlId="name">
                 <Form.Label className="mb-1">Full Name</Form.Label>
                 <Form.Control
                   type="name"
