@@ -25,21 +25,6 @@ The system is designed based on real-world requirements gathered through stakeho
 
 ---
 
-## 📋 Stakeholder Requirements
-
-- ✅ **Predefined Stage Flow**: Automatically assign standard stages like `Project Note → CE → Administration → ...` during project creation.  
-- ➕ **Custom Stage Addition**: Add stages specific to project needs with descriptions and estimated time.  
-- 🕒 **Stage Tracking**:
-  - Start Date
-  - End Date
-  - Status: Pending | In Progress | Completed  
-- 📊 **Visualization**:
-  - Table view of all stages
-  - Graphical flow diagram (Mermaid.js / react-flow)
-- 📄 **PDF Generation**: Create downloadable summary report of a project.
-- ✉️ **Email Sending**: Share the report via email directly from the system.
-
----
 
 ## 🖥️ Key Features
 
@@ -49,6 +34,11 @@ The system is designed based on real-world requirements gathered through stakeho
 - Add and manage custom stages.
 - Input/edit dates and statuses.
 - Generate PDF report and send via email.
+
+### 👨‍💻 Client Panel
+- View assigned project details
+- Track project progress by stages
+- No editing permission for clients
 
 ### 📊 Stage Visualization
 - Tabular view of all project stages with their metadata.
@@ -111,14 +101,6 @@ Send PDF via Email
 
 ---
 
-## 📱 Non-Functional Requirements
-
-- 🔐 **Security**: Only authenticated admin users can manage projects  
-- ⚡ **Performance**: Fast loading even with many projects and stages  
-- 🧑‍💻 **Usability**: Clean and intuitive UI design  
-- 📱 **Responsiveness**: Fully mobile-friendly interface  
-
----
 
 ## 📤 Development Setup
 
